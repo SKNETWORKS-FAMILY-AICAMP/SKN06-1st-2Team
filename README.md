@@ -57,6 +57,16 @@ pip install streamlit
 
 
 ## 결과
+- 최근 주식 가격 변동과 거래량 최고가/저가 
+![스크린샷 2024-10-15 140304](https://github.com/user-attachments/assets/51b16146-ee27-492b-b6ab-43710a0aa89d)
 
+- 3년간 주식가격 변동 그래프
+![스크린샷 2024-10-15 140252](https://github.com/user-attachments/assets/90769430-ea8c-422b-b674-60b7677b42aa)
+
+- 연도별 전기차 관련 기업 영업이익과 향후 3년간 예상 영업이익
+![스크린샷 2024-10-15 140326](https://github.com/user-attachments/assets/21b3350d-9c9c-4be0-b295-9674ab8c52c7)
+
+- 전기차 관련 최근 뉴스 동향
+![스크린샷 2024-10-15 140336](https://github.com/user-attachments/assets/96381587-e532-44a9-833b-e0212194762e)  
 ---
 
