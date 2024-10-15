@@ -11,7 +11,7 @@
 |----------|-----------------------------------------------------------------------------------------------|
 | 이세화   |  STREAMLIT, DATABASE                                                                          |
 | 김동훈   |  DATA CRAWLING                                                                                |
-| 장예린   |  DATA CRAWLING, SQL                                                                           |
+| 장예린   |  DATA CRAWLING, MYSQL &DB                                                                     |
 | 김승현   |  DATA CRAWLING                                                                                |
 
 
