@@ -32,7 +32,7 @@
 
 
  ### 기술 선택
-     <div>
+<div>
         <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white"/>
         <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white"/>
         <img src="https://img.shields.io/badge/Discord-5865F2?style=flat&logo=Discord&logoColor=white">
@@ -41,6 +41,7 @@
 </div>
 
 <hr>
+
 ## ERD
 
 
