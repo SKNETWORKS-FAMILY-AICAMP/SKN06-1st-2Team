@@ -43,6 +43,8 @@
 <hr>
 
 ## ERD
+![KakaoTalk_20241015_165029331](https://github.com/user-attachments/assets/7e5908f1-8e5b-48d1-880f-20310e31969a)
+
 
 
 ## 사전 설치
