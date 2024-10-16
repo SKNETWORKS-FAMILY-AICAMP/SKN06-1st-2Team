@@ -72,3 +72,22 @@ pip install streamlit
 ![스크린샷 2024-10-15 140336](https://github.com/user-attachments/assets/96381587-e532-44a9-833b-e0212194762e)  
 ---
 
+### ✔️ 팀원 회고
+
+이세화
+> 
+> 
+> 
+김동훈
+>
+>
+>
+김승현
+>
+>
+>
+장예린
+>
+>
+>
+
