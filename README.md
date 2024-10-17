@@ -67,7 +67,8 @@ pip install streamlit
 ![스크린샷 2024-10-15 140326](https://github.com/user-attachments/assets/21b3350d-9c9c-4be0-b295-9674ab8c52c7)
 
 - 전기차 관련 최근 뉴스 동향
-![스크린샷 2024-10-15 140336](https://github.com/user-attachments/assets/96381587-e532-44a9-833b-e0212194762e)  
+![스크린샷 2024-10-17 155035](https://github.com/user-attachments/assets/ab92f6d4-1e52-4db1-9f8a-206484196fa7)
+
 ---
 
 ### ✔️ 팀원 회고
