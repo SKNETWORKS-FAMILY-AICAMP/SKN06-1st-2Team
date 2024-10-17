@@ -18,6 +18,7 @@ companies_by_category = {
     '전기차충전': ['포스코DX', 'SK 네트웍스', '솔루엠', '롯데이노베이트']
 }
 
+
 # 좌측에 "주식정보", "재무제표", "뉴스"를 선택하는 radio 버튼 추가
 option = st.sidebar.radio(
     "옵션",
@@ -34,12 +35,12 @@ if option in ['주식', '재무제표']:
 
 # 아무 옵션도 선택하지 않았을 때 기본 화면 표시
 if option is None:
-    st.title("기업별 분기별 종가 꺾은선 그래프")
+    st.title("국내 전기차 기업 근황")
     
     # 앱의 설명
     st.markdown("""
-    이 애플리케이션은 각 기업의 분기별 종가를 시각화한 그래프를 보여줍니다.
-    왼쪽 사이드바에서 보고 싶은 검색 기준을 선택하세요.
+    국내 전기차 관련 기업의 다양한 정보를 확인하실 수 있습니다.
+    왼쪽 사이드바에서 원하는 옵션을 선택해 주세요.
     """)
 
 # "주식정보"가 선택되었을 때
@@ -134,22 +135,65 @@ elif option == '재무제표':
     else:
         st.write(f"{selected_company}의 영업이익 그래프를 찾을 수 없습니다.")
 
-# "뉴스"가 선택되었을 때
+
+
 elif option == '뉴스':
-    st.title("주식 관련 뉴스")
+    st.title("EV 뉴스")
+    st.markdown("---")
     
-    # 데이터 폴더에서 뉴스 CSV 파일 가져오기
+    if 'news_page' not in st.session_state:
+        st.session_state['news_page'] = 1  # 초기 페이지 설정
+    NEWS_PER_PAGE = 7
     news_csv_path = os.path.join('data', 'evpost_news.csv')
 
     if os.path.exists(news_csv_path):
-        # CSV 파일 읽기
         news_df = pd.read_csv(news_csv_path)
 
-        # 뉴스 제목과 링크 표시
-        for index, row in news_df.iterrows():
-            st.markdown(f"[{row['제목']}]({row['링크']})")
+        total_news = len(news_df)
+        start_idx = (st.session_state['news_page'] - 1) * NEWS_PER_PAGE
+        end_idx = start_idx + NEWS_PER_PAGE
+        current_news = news_df[start_idx:end_idx]
+
+        for index, row in current_news.iterrows():
+            col1, col2 = st.columns([3, 7])
+
+            if pd.notna(row['image']):
+                with col1:
+                    st.image(row['image'], width=250)
+
+            with col2:
+                st.header(row['title'])  # 제목
+                st.write(f"{row['date']}")  # 날짜
+
+                # 본문 내용 일부 표시
+                content_preview = row['content'][:120]
+                if len(row['content']) > 120:
+                    content_preview += '...'
+                
+                st.write(content_preview)
+                
+                # 클릭 시 원래 사이트로 이동하는 링크 추가
+                st.markdown(f"[전체 내용 보기]({row['url']})")
+
+            st.markdown("---")
+
+        col1, col2, col3 = st.columns([1, 2, 1])
+        
+        with col1:
+            if st.session_state['news_page'] > 1:
+                if st.button("이전 페이지"):
+                    st.session_state['news_page'] -= 1
+                    st.rerun()
+
+        with col3:
+            if end_idx < total_news:
+                if st.button("다음 페이지"):
+                    st.session_state['news_page'] += 1
+                    st.rerun()
+
     else:
         st.write("뉴스 데이터를 찾을 수 없습니다.")
+
 
 
 
