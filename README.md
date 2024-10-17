@@ -72,7 +72,7 @@ pip install streamlit
 
 ### ✔️ 팀원 회고
 
-이세화
+이세화(팀장)
 > 
 > 
 > 
